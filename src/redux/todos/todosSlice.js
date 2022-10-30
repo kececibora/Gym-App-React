@@ -8,14 +8,6 @@ export const getTodosAsync = createAsyncThunk(
   }
 );
 
-export const addTodoAsync = createAsyncThunk(
-  "todos/addTodoAsync",
-  async (data) => {
-    const res = await fetch("http//localhost/todos", data);
-    return res.data.json;
-  }
-);
-
 export const todosSlice = createSlice({
   name: "todos",
   initialState: {

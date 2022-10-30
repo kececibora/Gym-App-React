@@ -12,52 +12,38 @@ const app = express();
 app.use(cors());
 app.use(json());
 
-let admin = [
-  {
-    id: nanoid(2),
-    user: "Bora",
-    pass: "123",
-  },
-  {
-    id: nanoid(2),
-    user: "Berk",
-    pass: "123",
-  },
-];
-
 let todos = [
   {
-    id: nanoid(6),
+    id: nanoid(),
     title: "bacak",
 
     tip: "bacak",
   },
   {
-    id: nanoid(6),
+    id: nanoid(),
     title: "gögüs",
 
     tip: "gögüs",
   },
   {
-    id: nanoid(6),
+    id: nanoid(),
     title: "sırt",
 
     tip: "sırt",
   },
   {
-    id: nanoid(6),
+    id: nanoid(),
     title: "kol",
     tip: "sırt",
   },
   {
-    id: nanoid(6),
+    id: nanoid(),
     title: "pazı",
     tip: "sırt",
   },
 ];
 
 app.get("/todos", (req, res) => res.send(todos));
-app.get("/admin", (req, res) => res.send(admin));
 
 app.post("/todos", (req, res) => {
   const todo = { title: req.body.title, id: nanoid(), completed: false };

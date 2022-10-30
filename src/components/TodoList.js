@@ -6,8 +6,6 @@ function TodoList() {
   const dispatch = useDispatch();
   const items = useSelector(selectItem);
   const activeFilter = useSelector((state) => state.todos.activeFilter);
-  const isLoading = useSelector((state) => state.todos.isLoading);
-  const error = useSelector((state) => state.todos.error);
 
   useEffect(() => {
     dispatch(getTodosAsync());
@@ -22,13 +20,6 @@ function TodoList() {
   if (activeFilter !== "all") {
     filtered = items.filter((todo) => todo.tip === activeFilter);
   }
-  if (isLoading) {
-    return <h2>Yükleniyor</h2>;
-  }
-  if (error) {
-    return <h2>Hata!!</h2>;
-  }
-
   return (
     <>
       <ul className="todo-list">
