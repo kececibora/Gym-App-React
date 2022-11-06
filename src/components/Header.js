@@ -2,10 +2,12 @@ import Form from "./Form";
 
 function Header() {
   return (
-    <header className="header">
-      <h1>Fit Body</h1>
-      <Form />
-    </header>
+    <section className="todoapp">
+      <header className="header">
+        <h1>Fit Body</h1>
+        <Form />
+      </header>
+    </section>
   );
 }
 

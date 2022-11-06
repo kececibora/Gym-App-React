@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { changeActiveFilter, selectItem } from "../redux/todos/todosSlice";
 
 function ContentFooter() {
@@ -52,8 +53,9 @@ function ContentFooter() {
             </a>
           </li>
         </ul>
-
-        <button className="clear-completed">Üyelik Bilgileri</button>
+        <Link to="/user">
+          <button className="clear-completed">Üyelik Bilgileri</button>
+        </Link>
       </footer>
     </>
   );
